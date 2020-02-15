@@ -77,7 +77,7 @@ const Footer = () => {
             <Fade left delay={1000}>
               <div className="col s6">
                 <div className="copyright ">
-                  <p>&copy;2019 . All rights Reserved</p>
+                  <p>&copy;{new Date().getFullYear()} . All rights Reserved</p>
                 </div>
               </div>
             </Fade>
