@@ -1,17 +1,20 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Location from "../location";
 import Projects from "../projects";
 import { Element } from "react-scroll";
+import {Link} from 'react-router-dom';
 import Experiance from "../experiance";
 import Layout from "../layout";
 import About from "../about";
 import Contact from "../contact";
 import Carousel from "../carousel";
 const Home = () => {
-  document.body.classList.remove("overflow-hidden");
-  document.body.style.overflow = `visible`;
+  useEffect(()=>{
+    document.body.classList.remove("overflow-hidden");
+    document.body.style.overflow = `visible`;
+  })
   return (
-    <div>
+    <div style={{position: `relative`}}>
       <Layout>
         <Element name="about">
           <About />
@@ -30,6 +33,7 @@ const Home = () => {
           <Contact />
         </Element>
       </Layout>
+      <Link to="/admin/login" className="secLink">&nbsp;</Link>
     </div>
   );
 };

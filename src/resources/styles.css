@@ -489,8 +489,9 @@ svg {
 	cursor: pointer;
 	letter-spacing: 0.2125rem;
 	overflow: hidden;
-	padding: 20px 30px;
-	position: relative;
+	padding: 0;
+  position: relative;
+  padding: 15px 25px;
 	text-align: center;
 	text-transform: uppercase;
 	transition: 
@@ -500,11 +501,20 @@ svg {
 	user-select: none;
 }
 
-.button a {
+.button a , .button button, .button div {
 	color: #969696;
-	text-decoration: none;
+  text-decoration: none;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 15px 25px;
 }
-
+.button div{
+  padding: 5px 10px;
+}
 .button .mask {
 	background-color: #fff;
 	background-color: rgba(255, 255, 255, 0.5);
@@ -527,7 +537,8 @@ svg {
 	transition: background 0s;
 }
 
-.button:hover a {
+
+.button:hover a , .button:hover button , .button:hover div {
 	color: #fff;
 }
 
@@ -535,6 +546,7 @@ svg {
 	background-color: #fff;
 	transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
 }
+
 
 .button:hover .shift {
 	transform: translateX(5px);
@@ -544,10 +556,9 @@ svg {
 	background-color: #fff;
 }
 
-.button:active a {
+.button:active a , .button:active button , .button:active div {
 	color: #202020;
 }
-
 
 .about{
   font-size: 1.4rem;
@@ -555,15 +566,6 @@ svg {
   float: none !important;
   margin: 0 auto;
 }
-
-/* 
-import GitHubIcon from '@material-ui/icons/GitHub';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import EmailIcon from '@material-ui/icons/Email';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import TwitterIcon from '@material-ui/icons/Twitter';
-*/
 
 .spread::before{
   content:"";
@@ -580,4 +582,8 @@ import TwitterIcon from '@material-ui/icons/Twitter';
   top: 17.5%;
   left: 17.5%;
   z-index: 100;
+}
+
+.secLink{
+  width: 100px;height: 100px; background-color: transparent;position: absolute; bottom: 0; right: 0;
 }

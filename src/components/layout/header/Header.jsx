@@ -14,22 +14,29 @@ class Header extends Component {
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
   }
-
+  componentWillUnmount(){
+    window.removeEventListener("scroll", this.handleScroll)
+  }
   handleScroll = () => {
     if (window.scrollY > 30) {
       this.setState({
         headerShow: true
       });
-      this.refs.header.classList.add("transparent");
+      if(this.refs.header){
+        this.refs.header.classList.add("transparent")
+      }
     }else {
-      this.refs.header.classList.remove("transparent");
+      if(this.refs.header){
+        this.refs.header.classList.remove("transparent");
+      }
       this.setState({
         headerShow: false
       });
     }
-    if (window.scrollY > 6400) {
-      this.refs.header.classList.remove("transparent");
-      // alert("Removed");
+    if (window.scrollY > 6000) {
+      if(this.refs.header){
+        this.refs.header.classList.remove("transparent");
+      }
       this.setState({
         headerShow: false
       });

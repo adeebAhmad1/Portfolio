@@ -8,6 +8,7 @@ class Projects extends Component {
       {state => {
         return state.projects.map((el, i) => {
           let title = state.nameToUrl(el.name);
+          console.log(title,el.name)
           return (
             <Zoom key={i}>
               <div className="col s4">

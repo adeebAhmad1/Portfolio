@@ -1,22 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      .preloader span {
+        font-weight: bold;
+        color: #333;
+        animation: animate 1.4s linear infinite;
+        animation-delay: calc(var(--i)*0.2s);
+      }
+      @keyframes animate {
+        0%,
+        80% {
+          text-shadow: none;
+          color: #333;
+        }
+        100% {
+          color: #fff;
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff,
+            0 0 80px #fff, 0 0 120px #fff, 0 0 160px #fff;
+        }
+      }
+
+      .preloader h2 {
+        font-size: 10vw !important;
+        transition: all 0.5s ease-in;
+      }
+      .preloader {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-family: Dosis;
+        height: 100vh;
+        z-index: 10000;
+        background-color: #000;
+        transition: all 0.5s ease-in;
+      }
+      .preloader.done{
+        transform: translateY(-100%);
+      }
+    </style>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app"/>
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Rochester|Monoton|Righteous&display=swap" rel="stylesheet">
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dosis|Rochester|Monoton|Righteous&display=swap"
+      rel="stylesheet"
+    />
     <link rel="apple-touch-icon" href="logo192.png" />
-    <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      charset="UTF-8"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+    />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -32,9 +92,20 @@
     <title>Portfolio || By Adeeb Ahmad</title>
   </head>
   <body>
+    <div class="preloader">
+      <h2 class="loader">
+        <span style="--i: 0;">L</span>
+        <span style="--i: 1;">O</span>
+        <span style="--i: 2;">A</span>
+        <span style="--i: 3;">D</span>
+        <span style="--i: 4;">I</span>
+        <span style="--i: 5;">N</span>
+        <span style="--i: 6;">G</span>
+      </h2>
+    </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
