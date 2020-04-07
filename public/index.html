@@ -6,7 +6,7 @@
         font-weight: bold;
         color: #333;
         animation: animate 1.4s linear infinite;
-        animation-delay: calc(var(--i)*0.2s);
+        animation-delay: calc(var(--i) * 0.2s);
       }
       @keyframes animate {
         0%,
@@ -20,10 +20,42 @@
             0 0 80px #fff, 0 0 120px #fff, 0 0 160px #fff;
         }
       }
-
+      .preloader svg{
+        position: absolute;
+        width: 400px;
+        /* fill: #fff; */
+        top: 160px;
+      }
+      .preloader svg:nth-child(2){
+        filter: blur(40px);
+      }
+      .preloader svg path{
+        d: path("M0,25 C150,110 150,-60 300,25");
+        stroke-width: 50;
+        stroke: #fff;
+        stroke-linecap: round;
+        transform: translate(50px,50%);
+        animation: elastic 1.4s infinite;
+      }
+      @keyframes elastic {
+        0%{
+          stroke: #fff;
+          d: path("M0,25 C150,110 150,-60 300,25");
+        }
+        50%{
+          stroke: #333;
+          d: path("M0,25 C160,-50 140,110 300,25");
+        }
+        100%{
+          stroke: #fff;
+          d: path("M0,25 C150,110 150,-60 300,25");
+        }
+      }
       .preloader h2 {
-        font-size: 10vw !important;
+        font-size: 5vw !important;
         transition: all 0.5s ease-in;
+        margin-top: 150px;
+        display: inline-block;
       }
       .preloader {
         position: fixed;
@@ -39,7 +71,7 @@
         background-color: #000;
         transition: all 0.5s ease-in;
       }
-      .preloader.done{
+      .preloader.done {
         transform: translateY(-100%);
       }
     </style>
@@ -93,6 +125,12 @@
   </head>
   <body>
     <div class="preloader">
+      <svg>
+        <path></path>
+      </svg>
+      <svg>
+        <path></path>
+      </svg>
       <h2 class="loader">
         <span style="--i: 0;">L</span>
         <span style="--i: 1;">O</span>

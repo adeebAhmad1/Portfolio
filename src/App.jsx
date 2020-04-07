@@ -10,12 +10,12 @@ import React, { Component } from "react";
 
 class App extends Component {
   componentDidMount() {
-      window.addEventListener("load",()=>{
-        document.querySelector(".preloader h2").style.opacity = 0;
-      setTimeout(() => {
-        document.querySelector(".preloader").classList.add("done");
-      }, 500);
-      })
+      // window.addEventListener("load",()=>{
+      //   document.querySelector(".preloader h2").style.opacity = 0;
+      // setTimeout(() => {
+      //   document.querySelector(".preloader").classList.add("done");
+      // }, 500);
+      // })
   }
   render() {
     return (
